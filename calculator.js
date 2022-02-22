@@ -21,11 +21,17 @@ let calculator = (function() {
         return a / b;
     }
 
+    //Ver a digerença de dois números
+    function mod(a, b) {
+        return a % b;
+    }
+
     return {
         sum: sum,
         subtract: subtract,
         multiply: multiply,
         division: division,
+        mod: mod,
     };
 
 })();

@@ -6,6 +6,15 @@ const port = process.env.PORT || 3000;
 
 const app = express();
 
+app.get('/', (req, res) => {
+
+    res.setHeader('Content-Type', 'application/json');
+    res.send(JSON.stringify({
+        result: 'Welcome my friend!!'
+    }));
+
+});
+
 app.get('/sum/:x/:y', (req, res) => {
 
     let x = parseInt(req.params.x, 10);
@@ -54,6 +63,20 @@ app.get('/division/:x/:y', (req, res) => {
     let y = parseInt(req.params.y, 10);
 
     let result = calculator.division(x, y);
+
+    res.setHeader('Content-Type', 'application/json');
+    res.send(JSON.stringify({
+        result: result
+    }));
+
+});
+
+app.get('/mod/:x/:y', (req, res) => {
+
+    let x = parseInt(req.params.x, 10);
+    let y = parseInt(req.params.y, 10);
+
+    let result = calculator.mod(x, y);
 
     res.setHeader('Content-Type', 'application/json');
     res.send(JSON.stringify({
