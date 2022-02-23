@@ -21,7 +21,7 @@ let calculator = (function() {
         return a / b;
     }
 
-    //Ver a digerença de dois números
+    //Ver a diferença de dois números
     function mod(a, b) {
         return a % b;
     }
